@@ -1,0 +1,1719 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.26 secs
+ 
+--> Reading design: motherBoard.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "motherBoard.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "motherBoard"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : motherBoard
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "rectRenderer.v" in library work
+Compiling verilog file "digitRenderer.v" in library work
+Module <RectRenderer> compiled
+Compiling verilog file "numberRenderer.v" in library work
+Module <DigitRenderer> compiled
+Compiling verilog file "registerRenderer.v" in library work
+Module <NumberRenderer> compiled
+Compiling verilog file "registerHeapRenderer.v" in library work
+Module <registerRenderer> compiled
+Compiling verilog file "IFRenderer.v" in library work
+Module <RegisterHeapRenderer> compiled
+Compiling verilog file "VGAEngine.v" in library work
+Module <IFRenderer> compiled
+Compiling verilog file "utils.v" in library work
+Module <VGAEngine> compiled
+Module <flipflop> compiled
+Module <muxCombine> compiled
+Module <mux_B_buffered> compiled
+Compiling verilog file "renderer.v" in library work
+Module <byPass> compiled
+Compiling verilog file "register.v" in library work
+Module <Renderer> compiled
+Compiling verilog file "PCadder.v" in library work
+Module <Register> compiled
+Compiling verilog file "memory.v" in library work
+Module <PCadder> compiled
+Compiling verilog file "memAddressCalculator.v" in library work
+Module <Memory> compiled
+Compiling verilog file "instructReader.v" in library work
+Module <memAddressCalculator> compiled
+Compiling verilog file "instructDecoder.v" in library work
+Module <instructionReader> compiled
+Compiling verilog file "alu.v" in library work
+Module <instructionDecoder> compiled
+Compiling verilog file "serialPort.v" in library work
+Module <alu> compiled
+Compiling verilog file "SerialConn2.v" in library work
+Module <serialConn> compiled
+Compiling verilog file "memoryMapping.v" in library work
+Module <serialConn2> compiled
+Compiling verilog file "memoryController.v" in library work
+Module <memoryMapping> compiled
+Compiling verilog file "graphicCard.v" in library work
+Module <memoryController> compiled
+Compiling verilog file "cpu.v" in library work
+Module <GraphicCard> compiled
+Compiling verilog file "motherBoard.v" in library work
+Module <cpu> compiled
+Module <motherBoard> compiled
+No errors in compilation
+Analysis of file <"motherBoard.prj"> succeeded.
+ 
+Compiling vhdl file "G:/GitHub/makeacomputer/txmit.vhd" in Library work.
+Architecture v1 of Entity txmit is up to date.
+Compiling vhdl file "G:/GitHub/makeacomputer/rcvr.vhd" in Library work.
+Architecture v1 of Entity rcvr is up to date.
+Compiling vhdl file "G:/GitHub/makeacomputer/clkcon.vhd" in Library work.
+Architecture v1 of Entity clkcon is up to date.
+Compiling vhdl file "G:/GitHub/makeacomputer/uart2.vhd" in Library work.
+Architecture v1 of Entity uart2 is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <motherBoard> in library <work>.
+
+Analyzing hierarchy for module <cpu> in library <work>.
+
+Analyzing hierarchy for module <GraphicCard> in library <work>.
+
+Analyzing hierarchy for module <memoryMapping> in library <work> with parameters.
+	RAM = "000"
+	SERIALPORT_DATA_1 = "010"
+	SERIALPORT_DATA_2 = "110"
+	SERIALPORT_STATE_1 = "011"
+	SERIALPORT_STATE_2 = "111"
+
+Analyzing hierarchy for module <memoryController> in library <work>.
+
+Analyzing hierarchy for module <serialConn> in library <work> with parameters.
+	IDLE = "00"
+	MODE_READ = "10"
+	MODE_WRITE = "01"
+	READ = "10"
+	READ_IDLE = "11"
+	WRITE = "01"
+
+Analyzing hierarchy for module <serialConn2> in library <work> with parameters.
+	IDLE = "00"
+	MODE_READ = "10"
+	MODE_WRITE = "01"
+	READ = "10"
+	READ_IDLE = "11"
+	WRITE = "01"
+
+Analyzing hierarchy for entity <uart2> in library <work> (architecture <v1>).
+
+Analyzing hierarchy for module <PCadder> in library <work> with parameters.
+	DB = "110"
+	EQZ = "001"
+	IDLE = "000"
+	JUMP = "101"
+	NEZ = "010"
+	TEQZ = "011"
+	TNEZ = "100"
+
+Analyzing hierarchy for module <instructionReader> in library <work>.
+
+Analyzing hierarchy for module <instructionDecoder> in library <work> with parameters.
+	DB = "110"
+	EQZ = "001"
+	IDLE = "000"
+	JUMP = "101"
+	NEZ = "010"
+	TEQZ = "011"
+	TNEZ = "100"
+
+Analyzing hierarchy for module <Register> in library <work>.
+
+Analyzing hierarchy for module <flipflop> in library <work> with parameters.
+	width = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <flipflop> in library <work> with parameters.
+	width = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <flipflop> in library <work> with parameters.
+	width = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <alu> in library <work>.
+
+Analyzing hierarchy for module <memAddressCalculator> in library <work>.
+
+Analyzing hierarchy for module <mux_B_buffered> in library <work> with parameters.
+	width = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <byPass> in library <work>.
+
+Analyzing hierarchy for module <VGAEngine> in library <work> with parameters.
+	H_BACK_PORCH = "00000000000000000000000000110000"
+	H_FRONT_PORCH = "00000000000000000000000000010000"
+	H_RESULOTION = "00000000000000000000001010000000"
+	H_SYNC_PULSE = "00000000000000000000000001100000"
+	H_TOTAL = "00000000000000000000001100100000"
+	V_BACK_PORCH = "00000000000000000000000000100001"
+	V_FRONT_PORCH = "00000000000000000000000000001010"
+	V_RESULOTION = "00000000000000000000000111100000"
+	V_SYNC_PULSE = "00000000000000000000000000000010"
+	V_TOTAL = "00000000000000000000001000001101"
+
+Analyzing hierarchy for module <Renderer> in library <work>.
+
+Analyzing hierarchy for module <Memory> in library <work> with parameters.
+	IDLE = "00"
+	READ = "10"
+	WRITE = "01"
+
+Analyzing hierarchy for entity <txmit> in library <work> (architecture <v1>).
+
+Analyzing hierarchy for entity <rcvr> in library <work> (architecture <v1>).
+
+Analyzing hierarchy for entity <clkcon> in library <work> (architecture <v1>).
+
+Analyzing hierarchy for module <RegisterHeapRenderer> in library <work> with parameters.
+	deltaY = "00000000000000000000000000111100"
+
+Analyzing hierarchy for module <IFRenderer> in library <work>.
+
+Analyzing hierarchy for module <registerRenderer> in library <work>.
+
+Analyzing hierarchy for module <DigitRenderer> in library <work>.
+
+Analyzing hierarchy for module <NumberRenderer> in library <work>.
+
+Analyzing hierarchy for module <RectRenderer> in library <work>.
+
+Analyzing hierarchy for module <DigitRenderer> in library <work>.
+
+Analyzing hierarchy for module <RectRenderer> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <motherBoard>.
+Module <motherBoard> is correct for synthesis.
+ 
+Analyzing module <cpu> in library <work>.
+WARNING:Xst:863 - "cpu.v" line 96: Name conflict (<Y_conflict_EX> and <Y_CONFLICT_EX>, renaming Y_conflict_EX as y_conflict_ex_rnm0).
+Module <cpu> is correct for synthesis.
+ 
+Analyzing module <PCadder> in library <work>.
+	DB = 3'b110
+	EQZ = 3'b001
+	IDLE = 3'b000
+	JUMP = 3'b101
+	NEZ = 3'b010
+	TEQZ = 3'b011
+	TNEZ = 3'b100
+Module <PCadder> is correct for synthesis.
+ 
+Analyzing module <instructionReader> in library <work>.
+Module <instructionReader> is correct for synthesis.
+ 
+Analyzing module <instructionDecoder> in library <work>.
+	DB = 3'b110
+	EQZ = 3'b001
+	IDLE = 3'b000
+	JUMP = 3'b101
+	NEZ = 3'b010
+	TEQZ = 3'b011
+	TNEZ = 3'b100
+Module <instructionDecoder> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <flipflop.1> in library <work>.
+	width = 32'sb00000000000000000000000000010000
+Module <flipflop.1> is correct for synthesis.
+ 
+Analyzing module <flipflop.2> in library <work>.
+	width = 32'sb00000000000000000000000000000100
+Module <flipflop.2> is correct for synthesis.
+ 
+Analyzing module <flipflop.3> in library <work>.
+	width = 32'sb00000000000000000000000000000010
+Module <flipflop.3> is correct for synthesis.
+ 
+Analyzing module <alu> in library <work>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <memAddressCalculator> in library <work>.
+Module <memAddressCalculator> is correct for synthesis.
+ 
+Analyzing module <mux_B_buffered> in library <work>.
+	width = 32'sb00000000000000000000000000010000
+Module <mux_B_buffered> is correct for synthesis.
+ 
+Analyzing module <byPass> in library <work>.
+Module <byPass> is correct for synthesis.
+ 
+Analyzing module <GraphicCard> in library <work>.
+Module <GraphicCard> is correct for synthesis.
+ 
+Analyzing module <VGAEngine> in library <work>.
+	H_BACK_PORCH = 32'sb00000000000000000000000000110000
+	H_FRONT_PORCH = 32'sb00000000000000000000000000010000
+	H_RESULOTION = 32'sb00000000000000000000001010000000
+	H_SYNC_PULSE = 32'sb00000000000000000000000001100000
+	H_TOTAL = 32'sb00000000000000000000001100100000
+	V_BACK_PORCH = 32'sb00000000000000000000000000100001
+	V_FRONT_PORCH = 32'sb00000000000000000000000000001010
+	V_RESULOTION = 32'sb00000000000000000000000111100000
+	V_SYNC_PULSE = 32'sb00000000000000000000000000000010
+	V_TOTAL = 32'sb00000000000000000000001000001101
+Module <VGAEngine> is correct for synthesis.
+ 
+Analyzing module <Renderer> in library <work>.
+Module <Renderer> is correct for synthesis.
+ 
+Analyzing module <RegisterHeapRenderer> in library <work>.
+	deltaY = 32'sb00000000000000000000000000111100
+Module <RegisterHeapRenderer> is correct for synthesis.
+ 
+Analyzing module <IFRenderer> in library <work>.
+Module <IFRenderer> is correct for synthesis.
+ 
+Analyzing module <registerRenderer> in library <work>.
+Module <registerRenderer> is correct for synthesis.
+ 
+Analyzing module <NumberRenderer> in library <work>.
+Module <NumberRenderer> is correct for synthesis.
+ 
+Analyzing module <DigitRenderer> in library <work>.
+Module <DigitRenderer> is correct for synthesis.
+ 
+Analyzing module <RectRenderer> in library <work>.
+Module <RectRenderer> is correct for synthesis.
+ 
+Analyzing module <memoryMapping> in library <work>.
+	RAM = 3'b000
+	SERIALPORT_DATA_1 = 3'b010
+	SERIALPORT_DATA_2 = 3'b110
+	SERIALPORT_STATE_1 = 3'b011
+	SERIALPORT_STATE_2 = 3'b111
+Module <memoryMapping> is correct for synthesis.
+ 
+Analyzing module <memoryController> in library <work>.
+Module <memoryController> is correct for synthesis.
+ 
+Analyzing module <Memory> in library <work>.
+	IDLE = 2'b00
+	READ = 2'b10
+	WRITE = 2'b01
+Module <Memory> is correct for synthesis.
+ 
+Analyzing module <serialConn> in library <work>.
+	IDLE = 2'b00
+	MODE_READ = 2'b10
+	MODE_WRITE = 2'b01
+	READ = 2'b10
+	READ_IDLE = 2'b11
+	WRITE = 2'b01
+Module <serialConn> is correct for synthesis.
+ 
+Analyzing module <serialConn2> in library <work>.
+	IDLE = 2'b00
+	MODE_READ = 2'b10
+	MODE_WRITE = 2'b01
+	READ = 2'b10
+	READ_IDLE = 2'b11
+	WRITE = 2'b01
+Module <serialConn2> is correct for synthesis.
+ 
+Analyzing Entity <uart2> in library <work> (Architecture <v1>).
+Entity <uart2> analyzed. Unit <uart2> generated.
+
+Analyzing Entity <txmit> in library <work> (Architecture <v1>).
+WARNING:Xst:819 - "G:/GitHub/makeacomputer/txmit.vhd" line 112: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <wrn>
+Entity <txmit> analyzed. Unit <txmit> generated.
+
+Analyzing Entity <rcvr> in library <work> (Architecture <v1>).
+Entity <rcvr> analyzed. Unit <rcvr> generated.
+
+Analyzing Entity <clkcon> in library <work> (Architecture <v1>).
+Entity <clkcon> analyzed. Unit <clkcon> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <memoryMapping>.
+    Related source file is "memoryMapping.v".
+Unit <memoryMapping> synthesized.
+
+
+Synthesizing Unit <serialConn>.
+    Related source file is "serialPort.v".
+WARNING:Xst:737 - Found 8-bit latch for signal <data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit tristate buffer for signal <ram1Data>.
+    Summary:
+	inferred   8 Tristate(s).
+Unit <serialConn> synthesized.
+
+
+Synthesizing Unit <serialConn2>.
+    Related source file is "SerialConn2.v".
+WARNING:Xst:646 - Signal <busWritten> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <serialConn2> synthesized.
+
+
+Synthesizing Unit <PCadder>.
+    Related source file is "PCadder.v".
+WARNING:Xst:646 - Signal <instruction<15:11>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit register for signal <currentPC>.
+    Found 16-bit register for signal <instruction>.
+    Found 16-bit adder for signal <jumpPC$share0000> created at line 50.
+    Found 16-bit adder for signal <nextPC$addsub0000> created at line 89.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <PCadder> synthesized.
+
+
+Synthesizing Unit <instructionReader>.
+    Related source file is "instructReader.v".
+    Found 16-bit register for signal <currentIR>.
+    Found 16-bit register for signal <IRaddr>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <instructionReader> synthesized.
+
+
+Synthesizing Unit <instructionDecoder>.
+    Related source file is "instructDecoder.v".
+    Found 4-bit register for signal <id_registerX>.
+    Found 4-bit register for signal <id_registerY>.
+    Found 4-bit register for signal <id_registerZ>.
+    Found 3-bit register for signal <jumpControl>.
+    Found 16-bit register for signal <instructionBuffer>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+Unit <instructionDecoder> synthesized.
+
+
+Synthesizing Unit <Register>.
+    Related source file is "register.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <t>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16-bit 11-to-1 multiplexer for signal <readResultM>.
+    Found 16-bit 11-to-1 multiplexer for signal <readResultS>.
+    Found 176-bit register for signal <registers>.
+    Summary:
+	inferred 176 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <flipflop_1>.
+    Related source file is "utils.v".
+    Found 16-bit register for signal <out>.
+    Found 16-bit register for signal <buffer>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <flipflop_1> synthesized.
+
+
+Synthesizing Unit <flipflop_2>.
+    Related source file is "utils.v".
+    Found 4-bit register for signal <out>.
+    Found 4-bit register for signal <buffer>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <flipflop_2> synthesized.
+
+
+Synthesizing Unit <flipflop_3>.
+    Related source file is "utils.v".
+    Found 2-bit register for signal <out>.
+    Found 2-bit register for signal <buffer>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <flipflop_3> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "alu.v".
+    Found 1-bit register for signal <t_written>.
+    Found 1-bit register for signal <t>.
+    Found 16-bit register for signal <res>.
+    Found 16-bit register for signal <currentPC>.
+    Found 16-bit register for signal <instruction>.
+    Found 16-bit register for signal <opX>.
+    Found 16-bit register for signal <opY>.
+    Found 16-bit 4-to-1 multiplexer for signal <res$mux0003>.
+    Found 16-bit addsub for signal <res$share0000> created at line 47.
+    Found 16-bit shifter logical left for signal <res$shift0000> created at line 52.
+    Found 16-bit shifter logical right for signal <res$shift0001> created at line 53.
+    Found 16-bit shifter logical right for signal <res$shift0003> created at line 99.
+    Found 17-bit comparator less for signal <t$cmp_lt0000> created at line 63.
+    Found 16-bit comparator less for signal <t$cmp_lt0001> created at line 96.
+    Found 16-bit comparator not equal for signal <t$cmp_ne0000> created at line 105.
+    Summary:
+	inferred  66 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+	inferred  16 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <memAddressCalculator>.
+    Related source file is "memAddressCalculator.v".
+WARNING:Xst:646 - Signal <instruction<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 2-bit register for signal <memControl>.
+    Found 16-bit register for signal <memAddr>.
+    Found 16-bit register for signal <instruction>.
+    Found 16-bit adder for signal <memAddr$addsub0000>.
+    Found 16-bit register for signal <rm>.
+    Summary:
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <memAddressCalculator> synthesized.
+
+
+Synthesizing Unit <mux_B_buffered>.
+    Related source file is "utils.v".
+WARNING:Xst:646 - Signal <opBbuffer<16>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 17-bit register for signal <opBbuffer>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <mux_B_buffered> synthesized.
+
+
+Synthesizing Unit <byPass>.
+    Related source file is "utils.v".
+    Found 4-bit comparator equal for signal <selectedValue$cmp_eq0000> created at line 53.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <byPass> synthesized.
+
+
+Synthesizing Unit <VGAEngine>.
+    Related source file is "VGAEngine.v".
+    Found 1-bit register for signal <hs>.
+    Found 11-bit up counter for signal <x>.
+    Found 11-bit up counter for signal <y>.
+    Found 1-bit register for signal <vs>.
+    Found 11-bit comparator greatequal for signal <hs$cmp_ge0000> created at line 52.
+    Found 11-bit comparator less for signal <hs$cmp_lt0000> created at line 52.
+    Found 11-bit comparator greatequal for signal <vs$cmp_ge0000> created at line 65.
+    Found 11-bit comparator less for signal <vs$cmp_lt0000> created at line 65.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <VGAEngine> synthesized.
+
+
+Synthesizing Unit <RectRenderer>.
+    Related source file is "rectRenderer.v".
+    Found 11-bit adder for signal <hit$add0000> created at line 11.
+    Found 11-bit adder for signal <hit$add0001> created at line 11.
+    Found 11-bit comparator greater for signal <hit$cmp_gt0000> created at line 11.
+    Found 11-bit comparator greater for signal <hit$cmp_gt0001> created at line 11.
+    Found 11-bit comparator less for signal <hit$cmp_lt0000> created at line 11.
+    Found 11-bit comparator less for signal <hit$cmp_lt0001> created at line 11.
+    Found 11-bit subtractor for signal <hit$sub0000> created at line 11.
+    Found 11-bit subtractor for signal <hit$sub0001> created at line 11.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+Unit <RectRenderer> synthesized.
+
+
+Synthesizing Unit <Memory>.
+    Related source file is "memory.v".
+    Found 4x2-bit ROM for signal <control$rom0000>.
+    Found 16-bit tristate buffer for signal <dataBus>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  16 Tristate(s).
+Unit <Memory> synthesized.
+
+
+Synthesizing Unit <txmit>.
+    Related source file is "G:/GitHub/makeacomputer/txmit.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <wrn0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit register for signal <tsre>.
+    Found 1-bit register for signal <sdo>.
+    Found 1-bit register for signal <clk1x_enable>.
+    Found 4-bit up counter for signal <clkdiv>.
+    Found 4-bit up counter for signal <no_bits_sent>.
+    Found 1-bit register for signal <parity>.
+    Found 4-bit comparator greater for signal <parity$cmp_gt0000> created at line 137.
+    Found 4-bit comparator less for signal <parity$cmp_lt0000> created at line 137.
+    Found 1-bit xor2 for signal <parity$xor0000> created at line 141.
+    Found 4-bit comparator greatequal for signal <sdo$cmp_ge0000> created at line 137.
+    Found 4-bit comparator lessequal for signal <sdo$cmp_le0000> created at line 137.
+    Found 8-bit register for signal <tbr>.
+    Found 1-bit register for signal <tbre_t>.
+    Found 8-bit register for signal <tsr>.
+    Found 1-bit register for signal <wrn1>.
+    Found 1-bit register for signal <wrn2>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <txmit> synthesized.
+
+
+Synthesizing Unit <rcvr>.
+    Related source file is "G:/GitHub/makeacomputer/rcvr.vhd".
+    Found 1-bit register for signal <parity_error>.
+    Found 1-bit register for signal <data_ready>.
+    Found 1-bit register for signal <framing_error>.
+    Found 1-bit register for signal <clk1x_enable>.
+    Found 4-bit up counter for signal <clkdiv>.
+    Found 1-bit register for signal <isRead>.
+    Found 1-bit register for signal <newdata>.
+    Found 4-bit up counter for signal <no_bits_rcvd>.
+    Found 1-bit register for signal <parity>.
+    Found 1-bit xor2 for signal <parity$xor0000> created at line 120.
+    Found 8-bit register for signal <rbr>.
+    Found 8-bit register for signal <rsr>.
+    Found 4-bit comparator greatequal for signal <rsr_0$cmp_ge0000> created at line 117.
+    Found 4-bit comparator lessequal for signal <rsr_0$cmp_le0000> created at line 117.
+    Found 1-bit register for signal <rxd1>.
+    Found 1-bit register for signal <rxd2>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  25 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <rcvr> synthesized.
+
+
+Synthesizing Unit <clkcon>.
+    Related source file is "G:/GitHub/makeacomputer/clkcon.vhd".
+    Found 1-bit register for signal <clk>.
+    Found 32-bit register for signal <cnt72>.
+    Found 32-bit adder for signal <cnt72$addsub0000> created at line 51.
+    Found 32-bit 4-to-1 multiplexer for signal <cnt72$mux0002>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 Multiplexer(s).
+Unit <clkcon> synthesized.
+
+
+Synthesizing Unit <cpu>.
+    Related source file is "cpu.v".
+WARNING:Xst:646 - Signal <y_conflict_ex_rnm0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <Y_conflict_ME> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <Y_CONFLICT_EX> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <X_conflict_ME> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <X_conflict_EX> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <IdPC> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <cpu> synthesized.
+
+
+Synthesizing Unit <memoryController>.
+    Related source file is "memoryController.v".
+WARNING:Xst:737 - Found 16-bit latch for signal <AdataRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <BdataRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Unit <memoryController> synthesized.
+
+
+Synthesizing Unit <uart2>.
+    Related source file is "G:/GitHub/makeacomputer/uart2.vhd".
+Unit <uart2> synthesized.
+
+
+Synthesizing Unit <DigitRenderer>.
+    Related source file is "digitRenderer.v".
+    Found 16x7-bit ROM for signal <enable>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   6 Adder/Subtractor(s).
+Unit <DigitRenderer> synthesized.
+
+
+Synthesizing Unit <NumberRenderer>.
+    Related source file is "numberRenderer.v".
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+Unit <NumberRenderer> synthesized.
+
+
+Synthesizing Unit <registerRenderer>.
+    Related source file is "registerRenderer.v".
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <registerRenderer> synthesized.
+
+
+Synthesizing Unit <RegisterHeapRenderer>.
+    Related source file is "registerHeapRenderer.v".
+WARNING:Xst:647 - Input <registers<143:80>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <registers<47:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <RegisterHeapRenderer> synthesized.
+
+
+Synthesizing Unit <IFRenderer>.
+    Related source file is "IFRenderer.v".
+Unit <IFRenderer> synthesized.
+
+
+Synthesizing Unit <Renderer>.
+    Related source file is "renderer.v".
+    Found 11-bit comparator less for signal <r$cmp_lt0000> created at line 17.
+    Found 11-bit comparator less for signal <r$cmp_lt0001> created at line 17.
+    Summary:
+	inferred   2 Comparator(s).
+Unit <Renderer> synthesized.
+
+
+Synthesizing Unit <GraphicCard>.
+    Related source file is "graphicCard.v".
+Unit <GraphicCard> synthesized.
+
+
+Synthesizing Unit <motherBoard>.
+    Related source file is "motherBoard.v".
+WARNING:Xst:647 - Input <clkClick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <serialPortState_2<3:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <serialPortState_1<3:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ram1We_2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ram1Oe_2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ram1En_2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <parity_error_2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <framing_error_2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <clk12M>.
+    Found 1-bit register for signal <clk25M>.
+    Found 1-bit register for signal <clk6M>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <motherBoard> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 45
+ 16x7-bit ROM                                          : 44
+ 4x2-bit ROM                                           : 1
+# Adders/Subtractors                                   : 1549
+ 11-bit adder                                          : 772
+ 11-bit subtractor                                     : 772
+ 16-bit adder                                          : 3
+ 16-bit addsub                                         : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 6
+ 11-bit up counter                                     : 2
+ 4-bit up counter                                      : 4
+# Registers                                            : 78
+ 1-bit register                                        : 30
+ 16-bit register                                       : 32
+ 17-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 7
+ 8-bit register                                        : 3
+# Latches                                              : 5
+ 1-bit latch                                           : 2
+ 16-bit latch                                          : 2
+ 8-bit latch                                           : 1
+# Comparators                                          : 1251
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator greater                             : 616
+ 11-bit comparator less                                : 620
+ 16-bit comparator less                                : 1
+ 16-bit comparator not equal                           : 1
+ 17-bit comparator less                                : 1
+ 4-bit comparator equal                                : 4
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 1
+ 4-bit comparator lessequal                            : 2
+# Multiplexers                                         : 4
+ 16-bit 11-to-1 multiplexer                            : 2
+ 16-bit 4-to-1 multiplexer                             : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 2
+# Tristates                                            : 2
+ 16-bit tristate buffer                                : 1
+ 8-bit tristate buffer                                 : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <opBbuffer_16> of sequential type is unconnected in block <MeCalResultMux>.
+WARNING:Xst:2404 -  FFs/Latches <opBbuffer<16:16>> (without init value) have a constant value of 0 in block <mux_B_buffered>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 45
+ 16x7-bit ROM                                          : 44
+ 4x2-bit ROM                                           : 1
+# Adders/Subtractors                                   : 1549
+ 11-bit adder                                          : 772
+ 11-bit subtractor                                     : 772
+ 16-bit adder                                          : 3
+ 16-bit addsub                                         : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 6
+ 11-bit up counter                                     : 2
+ 4-bit up counter                                      : 4
+# Registers                                            : 651
+ Flip-Flops                                            : 651
+# Latches                                              : 5
+ 1-bit latch                                           : 2
+ 16-bit latch                                          : 2
+ 8-bit latch                                           : 1
+# Comparators                                          : 1251
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator greater                             : 616
+ 11-bit comparator less                                : 620
+ 16-bit comparator less                                : 1
+ 16-bit comparator not equal                           : 1
+ 17-bit comparator less                                : 1
+ 4-bit comparator equal                                : 4
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 1
+ 4-bit comparator lessequal                            : 2
+# Multiplexers                                         : 4
+ 16-bit 11-to-1 multiplexer                            : 2
+ 16-bit 4-to-1 multiplexer                             : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 2
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <instruction_15> of sequential type is unconnected in block <PCadder>.
+WARNING:Xst:2677 - Node <instruction_14> of sequential type is unconnected in block <PCadder>.
+WARNING:Xst:2677 - Node <instruction_13> of sequential type is unconnected in block <PCadder>.
+WARNING:Xst:2677 - Node <instruction_12> of sequential type is unconnected in block <PCadder>.
+WARNING:Xst:2677 - Node <instruction_11> of sequential type is unconnected in block <PCadder>.
+WARNING:Xst:2677 - Node <instruction_10> of sequential type is unconnected in block <memAddressCalculator>.
+WARNING:Xst:2677 - Node <instruction_9> of sequential type is unconnected in block <memAddressCalculator>.
+WARNING:Xst:2677 - Node <instruction_8> of sequential type is unconnected in block <memAddressCalculator>.
+
+Optimizing unit <motherBoard> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <flipflop_1> ...
+
+Optimizing unit <flipflop_2> ...
+
+Optimizing unit <mux_B_buffered> ...
+
+Optimizing unit <VGAEngine> ...
+
+Optimizing unit <RectRenderer> ...
+
+Optimizing unit <txmit> ...
+
+Optimizing unit <rcvr> ...
+
+Optimizing unit <clkcon> ...
+
+Optimizing unit <PCadder> ...
+
+Optimizing unit <instructionReader> ...
+
+Optimizing unit <instructionDecoder> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <memAddressCalculator> ...
+
+Optimizing unit <DigitRenderer> ...
+
+Optimizing unit <cpu> ...
+
+Optimizing unit <NumberRenderer> ...
+
+Optimizing unit <Renderer> ...
+WARNING:Xst:2677 - Node <myuart/u2/parity> of sequential type is unconnected in block <motherBoard>.
+WARNING:Xst:2677 - Node <myuart/u2/framing_error> of sequential type is unconnected in block <motherBoard>.
+WARNING:Xst:2677 - Node <myuart/u2/parity_error> of sequential type is unconnected in block <motherBoard>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_10> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_10> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_11> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_11> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_12> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_12> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_13> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_13> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_0> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_0> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_1> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_1> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_2> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_2> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_14> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_14> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_3> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_3> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_4> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_4> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_5> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_5> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_6> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_6> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_7> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_7> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_15> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_15> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_10> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_10> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_11> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_11> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_12> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_12> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_13> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_13> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_14> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_14> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_15> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_15> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_0> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_0> <naive/IdIRFF/buffer_0> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_1> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_1> <naive/IdIRFF/buffer_1> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_2> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_2> <naive/IdIRFF/buffer_2> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_3> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_3> <naive/IdIRFF/buffer_3> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_4> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_4> <naive/IdIRFF/buffer_4> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_5> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_5> <naive/IdIRFF/buffer_5> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_6> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_6> <naive/IdIRFF/buffer_6> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_7> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_7> <naive/IdIRFF/buffer_7> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_8> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_8> <naive/IdIRFF/buffer_8> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_9> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_9> <naive/IdIRFF/buffer_9> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_10> in Unit <motherBoard> is equivalent to the following 2 FFs/Latches, which will be removed : <naive/pcAdder/instruction_10> <naive/IdIRFF/buffer_10> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_12> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/IdIRFF/buffer_12> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_13> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/IdIRFF/buffer_13> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_14> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/IdIRFF/buffer_14> 
+INFO:Xst:2261 - The FF/Latch <naive/decoder/instructionBuffer_15> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/IdIRFF/buffer_15> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_0> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_0> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_1> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_1> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_2> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_2> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_3> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_3> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_12> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_12> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_13> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_13> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_14> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_14> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_4> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_4> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_15> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_15> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_5> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_5> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_6> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_6> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_7> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_7> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_8> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_8> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/rm_9> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/opY_9> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_0> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_0> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_1> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_1> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_2> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_2> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_3> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_3> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_4> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_4> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_5> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_5> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_6> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_6> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_7> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_7> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_8> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_8> 
+INFO:Xst:2261 - The FF/Latch <naive/MeCalResultMux/opBbuffer_9> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/MeMemResultFF/buffer_9> 
+INFO:Xst:2261 - The FF/Latch <naive/addrCalculator/instruction_11> in Unit <motherBoard> is equivalent to the following FF/Latch, which will be removed : <naive/calculator/instruction_11> 
+Found area constraint ratio of 100 (+ 5) on block motherBoard, actual ratio is 95.
+FlipFlop naive/MeRegisterTFF/out_0 has been replicated 1 time(s)
+FlipFlop naive/MeRegisterTFF/out_1 has been replicated 1 time(s)
+FlipFlop naive/MeRegisterTFF/out_2 has been replicated 1 time(s)
+FlipFlop naive/MeRegisterTFF/out_3 has been replicated 1 time(s)
+FlipFlop naive/decoder/id_registerX_0 has been replicated 2 time(s)
+FlipFlop naive/decoder/id_registerX_1 has been replicated 2 time(s)
+FlipFlop naive/decoder/id_registerX_2 has been replicated 1 time(s)
+FlipFlop naive/decoder/id_registerX_3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 617
+ Flip-Flops                                            : 617
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : motherBoard.ngr
+Top Level Output File Name         : motherBoard
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 86
+
+Cell Usage :
+# BELS                             : 26246
+#      GND                         : 1
+#      INV                         : 7800
+#      LUT1                        : 4063
+#      LUT2                        : 314
+#      LUT2_D                      : 5
+#      LUT2_L                      : 1
+#      LUT3                        : 353
+#      LUT3_D                      : 36
+#      LUT3_L                      : 9
+#      LUT4                        : 1266
+#      LUT4_D                      : 16
+#      LUT4_L                      : 71
+#      MUXCY                       : 11953
+#      MUXF5                       : 215
+#      MUXF6                       : 24
+#      VCC                         : 1
+#      XORCY                       : 118
+# FlipFlops/Latches                : 659
+#      FD_1                        : 16
+#      FDC                         : 188
+#      FDC_1                       : 146
+#      FDCE                        : 39
+#      FDCE_1                      : 176
+#      FDE                         : 2
+#      FDP                         : 28
+#      FDP_1                       : 20
+#      FDPE                        : 2
+#      LD                          : 16
+#      LD_1                        : 17
+#      LDE                         : 8
+#      LDP_1                       : 1
+# Clock Buffers                    : 5
+#      BUFG                        : 4
+#      BUFGP                       : 1
+# IO Buffers                       : 84
+#      IBUF                        : 6
+#      IOBUF                       : 24
+#      OBUF                        : 54
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                     7504  out of   8672    86%  
+ Number of Slice Flip Flops:            659  out of  17344     3%  
+ Number of 4 input LUTs:              13934  out of  17344    80%  
+ Number of IOs:                          86
+ Number of bonded IOBs:                  85  out of    250    34%  
+ Number of GCLKs:                         5  out of     24    20%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)         | Load  |
+-----------------------------------+-------------------------------+-------+
+clk                                | BUFGP                         | 1     |
+rst                                | IBUF+BUFG                     | 8     |
+clk11M                             | IBUF+BUFG                     | 563   |
+clk25M1                            | BUFG                          | 24    |
+myuart/u1/clkdiv_3                 | NONE(myuart/u1/no_bits_sent_3)| 15    |
+myuart/u3/clk                      | NONE(myuart/u1/clkdiv_3)      | 17    |
+wrn_2(serial2/wrn:O)               | NONE(*)(myuart/u1/wrn0)       | 9     |
+myuart/u2/clkdiv_31                | BUFG                          | 21    |
+naive/calculator/t_written         | NONE(naive/registerFile/t)    | 1     |
+-----------------------------------+-------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------------------+-------------------------------+-------+
+Control Signal                                                           | Buffer(FF name)               | Load  |
+-------------------------------------------------------------------------+-------------------------------+-------+
+graphic/VGAEngineM/rst_inv(rst_inv1_INV_0:O)                             | NONE(clk25M)                  | 581   |
+myuart/u1/clkdiv_not0001_inv(myuart/u1/clkdiv_not0001_inv1:O)            | NONE(myuart/u1/clkdiv_0)      | 4     |
+myuart/u1/no_bits_sent_not0001_inv(myuart/u1/no_bits_sent_not0001_inv1:O)| NONE(myuart/u1/no_bits_sent_0)| 4     |
+myuart/u2/clkdiv_not0001_inv(myuart/u2/clkdiv_not0001_inv1:O)            | NONE(myuart/u2/clkdiv_0)      | 4     |
+myuart/u2/no_bits_rcvd_or0000(myuart/u2/no_bits_rcvd_or00001:O)          | NONE(myuart/u2/no_bits_rcvd_0)| 4     |
+myuart/u1/wrn0_0_not0000(myuart/u1/wrn0_or00001:O)                       | NONE(myuart/u1/wrn0)          | 1     |
+myuart/u2/clk1x_enable_or0000(myuart/u2/clk1x_enable_or00001:O)          | NONE(myuart/u2/clk1x_enable)  | 1     |
+myuart/u2/data_ready_not0001_inv(myuart/u2/newdata_or0000:O)             | NONE(myuart/u2/data_ready)    | 1     |
+-------------------------------------------------------------------------+-------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 24.290ns (Maximum Frequency: 41.169MHz)
+   Minimum input arrival time before clock: 10.202ns
+   Maximum output required time after clock: 23.571ns
+   Maximum combinational path delay: 21.628ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.470ns (frequency: 404.858MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.470ns (Levels of Logic = 1)
+  Source:            clk25M (FF)
+  Destination:       clk25M (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: clk25M to clk25M
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q            2   0.591   0.447  clk25M (clk25M1)
+     INV:I->O              1   0.704   0.420  clk25M_LUT1_INV_0 (clk25M_LUT1)
+     FDC_1:D                   0.308          clk25M
+    ----------------------------------------
+    Total                      2.470ns (1.603ns logic, 0.867ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'rst'
+  Clock period: 2.254ns (frequency: 443.656MHz)
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               2.254ns (Levels of Logic = 1)
+  Source:            serial1/data_7 (LATCH)
+  Destination:       serial1/data_7 (LATCH)
+  Source Clock:      rst falling
+  Destination Clock: rst falling
+
+  Data Path: serial1/data_7 to serial1/data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              3   0.676   0.566  serial1/data_7 (serial1/data_7)
+     LUT3:I2->O            1   0.704   0.000  serial1/data_mux0000<7>1 (serial1/data_mux0000<7>)
+     LDE:D                     0.308          serial1/data_7
+    ----------------------------------------
+    Total                      2.254ns (1.688ns logic, 0.566ns route)
+                                       (74.9% logic, 25.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk25M1'
+  Clock period: 6.208ns (frequency: 161.082MHz)
+  Total number of paths / destination ports: 539 / 35
+-------------------------------------------------------------------------
+Delay:               6.208ns (Levels of Logic = 2)
+  Source:            graphic/VGAEngineM/x_9 (FF)
+  Destination:       graphic/VGAEngineM/y_10 (FF)
+  Source Clock:      clk25M1 falling
+  Destination Clock: clk25M1 falling
+
+  Data Path: graphic/VGAEngineM/x_9 to graphic/VGAEngineM/y_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            575   0.591   1.585  graphic/VGAEngineM/x_9 (graphic/VGAEngineM/x_9)
+     LUT4:I0->O           12   0.704   1.136  graphic/VGAEngineM/x_cmp_eq00008 (graphic/VGAEngineM/x_cmp_eq00008)
+     LUT3:I0->O           11   0.704   0.933  graphic/VGAEngineM/x_cmp_eq000031 (graphic/VGAEngineM/x_cmp_eq0000)
+     FDCE:CE                   0.555          graphic/VGAEngineM/y_0
+    ----------------------------------------
+    Total                      6.208ns (2.554ns logic, 3.654ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'myuart/u1/clkdiv_3'
+  Clock period: 5.569ns (frequency: 179.565MHz)
+  Total number of paths / destination ports: 152 / 16
+-------------------------------------------------------------------------
+Delay:               5.569ns (Levels of Logic = 3)
+  Source:            myuart/u1/no_bits_sent_2 (FF)
+  Destination:       myuart/u1/tsr_6 (FF)
+  Source Clock:      myuart/u1/clkdiv_3 falling
+  Destination Clock: myuart/u1/clkdiv_3 falling
+
+  Data Path: myuart/u1/no_bits_sent_2 to myuart/u1/tsr_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.591   1.108  myuart/u1/no_bits_sent_2 (myuart/u1/no_bits_sent_2)
+     LUT4:I0->O            9   0.704   0.995  myuart/u1/tsre_mux000011 (myuart/u1/N11)
+     LUT4:I0->O            1   0.704   0.455  myuart/u1/tsr_mux0000<6>_SW0 (N20)
+     LUT3:I2->O            1   0.704   0.000  myuart/u1/tsr_mux0000<6> (myuart/u1/tsr_mux0000<6>)
+     FDC:D                     0.308          myuart/u1/tsr_6
+    ----------------------------------------
+    Total                      5.569ns (3.011ns logic, 2.558ns route)
+                                       (54.1% logic, 45.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'myuart/u3/clk'
+  Clock period: 3.078ns (frequency: 324.886MHz)
+  Total number of paths / destination ports: 39 / 22
+-------------------------------------------------------------------------
+Delay:               3.078ns (Levels of Logic = 1)
+  Source:            myuart/u1/wrn1 (FF)
+  Destination:       myuart/u1/tbre_t (FF)
+  Source Clock:      myuart/u3/clk rising
+  Destination Clock: myuart/u3/clk rising
+
+  Data Path: myuart/u1/wrn1 to myuart/u1/tbre_t
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.591   0.808  myuart/u1/wrn1 (myuart/u1/wrn1)
+     LUT4:I0->O            1   0.704   0.420  myuart/u1/tbre_t_not0001 (myuart/u1/tbre_t_not0001)
+     FDPE:CE                   0.555          myuart/u1/tbre_t
+    ----------------------------------------
+    Total                      3.078ns (1.850ns logic, 1.228ns route)
+                                       (60.1% logic, 39.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'myuart/u2/clkdiv_31'
+  Clock period: 3.602ns (frequency: 277.624MHz)
+  Total number of paths / destination ports: 102 / 37
+-------------------------------------------------------------------------
+Delay:               3.602ns (Levels of Logic = 1)
+  Source:            myuart/u2/no_bits_rcvd_0 (FF)
+  Destination:       myuart/u2/rbr_7 (FF)
+  Source Clock:      myuart/u2/clkdiv_31 rising
+  Destination Clock: myuart/u2/clkdiv_31 rising
+
+  Data Path: myuart/u2/no_bits_rcvd_0 to myuart/u2/rbr_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.591   0.995  myuart/u2/no_bits_rcvd_0 (myuart/u2/no_bits_rcvd_0)
+     LUT4:I0->O            8   0.704   0.757  myuart/u2/rbr_and00001 (myuart/u2/rbr_and0000)
+     FDCE:CE                   0.555          myuart/u2/rbr_0
+    ----------------------------------------
+    Total                      3.602ns (1.850ns logic, 1.752ns route)
+                                       (51.4% logic, 48.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk11M'
+  Clock period: 24.290ns (frequency: 41.169MHz)
+  Total number of paths / destination ports: 106423 / 708
+-------------------------------------------------------------------------
+Delay:               12.145ns (Levels of Logic = 8)
+  Source:            naive/MeRegisterTFF/out_1_1 (FF)
+  Destination:       naive/reader/IRaddr_0 (FF)
+  Source Clock:      clk11M rising
+  Destination Clock: clk11M falling
+
+  Data Path: naive/MeRegisterTFF/out_1_1 to naive/reader/IRaddr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.591   0.595  naive/MeRegisterTFF/out_1_1 (naive/MeRegisterTFF/out_1_1)
+     LUT4:I0->O           19   0.704   1.164  naive/MeIdByPassS/selectedValue_cmp_eq0000426 (naive/MeIdByPassS/selectedValue_cmp_eq0000426)
+     LUT2:I1->O           18   0.704   1.072  naive/MeIdByPassS/selectedValue_cmp_eq0000454 (naive/MeIdByPassS/selectedValue_cmp_eq0000)
+     LUT4:I3->O            1   0.704   0.424  naive/ExIdByPassS/selectedValue<12>56 (naive/ExIdByPassS/selectedValue<12>56)
+     LUT4:I3->O            4   0.704   0.762  naive/ExIdByPassS/selectedValue<12>98 (naive/rs<12>)
+     LUT4:I0->O            1   0.704   0.424  naive/pcAdder/jumpPC_cmp_eq000159 (naive/pcAdder/jumpPC_cmp_eq000159)
+     LUT4_L:I3->LO         1   0.704   0.104  naive/pcAdder/jumpPC_cmp_eq000176 (naive/pcAdder/jumpPC_cmp_eq000176)
+     LUT4:I3->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   0.000  naive/pcAdder/nextPC<15> (leddebug_15_OBUF)
+     FDC_1:D                   0.308          naive/IfPCFF/buffer_15
+    ----------------------------------------
+    Total                     12.145ns (6.566ns logic, 5.579ns route)
+                                       (54.1% logic, 45.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rst'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              3.035ns (Levels of Logic = 1)
+  Source:            clk11M (PAD)
+  Destination:       serial1/data_7 (LATCH)
+  Destination Clock: rst falling
+
+  Data Path: clk11M to serial1/data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            30   1.218   1.262  clk11M_IBUF (clk11M_IBUF1)
+     LDE:GE                    0.555          serial1/data_7
+    ----------------------------------------
+    Total                      3.035ns (1.773ns logic, 1.262ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk11M'
+  Total number of paths / destination ports: 615 / 109
+-------------------------------------------------------------------------
+Offset:              10.202ns (Levels of Logic = 7)
+  Source:            tsre_1 (PAD)
+  Destination:       naive/reader/IRaddr_0 (FF)
+  Destination Clock: clk11M falling
+
+  Data Path: tsre_1 to naive/reader/IRaddr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.526  tsre_1_IBUF (tsre_1_IBUF)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>12 (naive/MeCalResultMux/result<0>12)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>52 (naive/MeCalResultMux/result<0>52)
+     LUT4:I1->O           23   0.704   1.237  naive/MeCalResultMux/result<0>100 (MeCalResult<0>)
+     LUT3:I2->O            4   0.704   0.622  naive/ExIdByPassS/selectedValue<0>97 (naive/rs<0>)
+     LUT4:I2->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   0.000  naive/pcAdder/nextPC<15> (leddebug_15_OBUF)
+     FDC_1:D                   0.308          naive/IfPCFF/buffer_15
+    ----------------------------------------
+    Total                     10.202ns (5.785ns logic, 4.417ns route)
+                                       (56.7% logic, 43.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'myuart/u3/clk'
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Offset:              6.648ns (Levels of Logic = 4)
+  Source:            clk11M (PAD)
+  Destination:       myuart/u2/newdata (FF)
+  Destination Clock: myuart/u3/clk rising
+
+  Data Path: clk11M to myuart/u2/newdata
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            30   1.218   1.266  clk11M_IBUF (clk11M_IBUF1)
+     LUT4:I3->O            1   0.704   0.455  myuart/u2/newdata_or0000_SW0 (N16)
+     LUT4:I2->O            2   0.704   0.622  myuart/u2/newdata_or0000 (myuart/u2/data_ready_not0001_inv)
+     LUT3:I0->O            1   0.704   0.420  myuart/u2/newdata_and00001 (myuart/u2/newdata_and0000)
+     FDE:CE                    0.555          myuart/u2/newdata
+    ----------------------------------------
+    Total                      6.648ns (3.885ns logic, 2.763ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'myuart/u1/clkdiv_3'
+  Total number of paths / destination ports: 1855 / 26
+-------------------------------------------------------------------------
+Offset:              22.327ns (Levels of Logic = 14)
+  Source:            myuart/u1/tsre (FF)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      myuart/u1/clkdiv_3 falling
+
+  Data Path: myuart/u1/tsre to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.591   0.526  myuart/u1/tsre (myuart/u1/tsre)
+     LUT3:I1->O            2   0.704   0.622  naive/MeCalResultMux/result<0>12_SW0 (mapingB/realData<0>0)
+     LUT4:I0->O            1   0.704   0.499  naive/MeCalResultMux/result<0>12 (naive/MeCalResultMux/result<0>12)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>52 (naive/MeCalResultMux/result<0>52)
+     LUT4:I1->O           23   0.704   1.237  naive/MeCalResultMux/result<0>100 (MeCalResult<0>)
+     LUT3:I2->O            4   0.704   0.622  naive/ExIdByPassS/selectedValue<0>97 (naive/rs<0>)
+     LUT4:I2->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     22.327ns (13.050ns logic, 9.277ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk11M'
+  Total number of paths / destination ports: 2892603 / 69
+-------------------------------------------------------------------------
+Offset:              23.571ns (Levels of Logic = 15)
+  Source:            naive/MeRegisterTFF/out_1_1 (FF)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      clk11M rising
+
+  Data Path: naive/MeRegisterTFF/out_1_1 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.591   0.595  naive/MeRegisterTFF/out_1_1 (naive/MeRegisterTFF/out_1_1)
+     LUT4:I0->O           19   0.704   1.164  naive/MeIdByPassS/selectedValue_cmp_eq0000426 (naive/MeIdByPassS/selectedValue_cmp_eq0000426)
+     LUT2:I1->O           18   0.704   1.072  naive/MeIdByPassS/selectedValue_cmp_eq0000454 (naive/MeIdByPassS/selectedValue_cmp_eq0000)
+     LUT4:I3->O            1   0.704   0.424  naive/ExIdByPassS/selectedValue<12>56 (naive/ExIdByPassS/selectedValue<12>56)
+     LUT4:I3->O            4   0.704   0.762  naive/ExIdByPassS/selectedValue<12>98 (naive/rs<12>)
+     LUT4:I0->O            1   0.704   0.424  naive/pcAdder/jumpPC_cmp_eq000159 (naive/pcAdder/jumpPC_cmp_eq000159)
+     LUT4_L:I3->LO         1   0.704   0.104  naive/pcAdder/jumpPC_cmp_eq000176 (naive/pcAdder/jumpPC_cmp_eq000176)
+     LUT4:I3->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     23.571ns (13.754ns logic, 9.817ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk25M1'
+  Total number of paths / destination ports: 137036 / 11
+-------------------------------------------------------------------------
+Offset:              21.643ns (Levels of Logic = 24)
+  Source:            graphic/VGAEngineM/y_0 (FF)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      clk25M1 falling
+
+  Data Path: graphic/VGAEngineM/y_0 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           422   0.591   1.560  graphic/VGAEngineM/y_0 (graphic/VGAEngineM/y_0)
+     LUT1:I0->O            1   0.704   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<0>_rt (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<0> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<1> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<2> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<3> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<4> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<5> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<6> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<7> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<8> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<9> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<9>)
+     MUXCY:CI->O           1   0.459   0.595  graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<10> (graphic/RendererM/ifResgisters/irRenderer/value/second/pos0/Mcompar_hit_cmp_lt0001_cy<10>)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>2124_SW0 (N614)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>2124 (graphic/RendererM/b<1>2124)
+     LUT4:I3->O            1   0.704   0.499  graphic/RendererM/b<1>2136 (graphic/RendererM/b<1>2136)
+     LUT3:I1->O            1   0.704   0.424  graphic/RendererM/b<1>2336_SW0 (N1082)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>2336 (graphic/RendererM/b<1>2336)
+     LUT4:I3->O            1   0.704   0.499  graphic/RendererM/b<1>2358 (graphic/RendererM/b<1>2358)
+     LUT4:I1->O            1   0.704   0.595  graphic/RendererM/b<1>5016 (graphic/RendererM/b<1>5016)
+     LUT4:I0->O            1   0.704   0.424  graphic/RendererM/b<1>22068 (graphic/RendererM/b<1>22068)
+     LUT4:I3->O            1   0.704   0.595  graphic/RendererM/b<1>22195 (graphic/RendererM/b<1>22195)
+     LUT4:I0->O            1   0.704   0.595  graphic/RendererM/b<1>22685 (graphic/RendererM/b<1>22685)
+     LUT4:I0->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     21.643ns (13.765ns logic, 7.878ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'naive/calculator/t_written'
+  Total number of paths / destination ports: 9384 / 25
+-------------------------------------------------------------------------
+Offset:              17.572ns (Levels of Logic = 12)
+  Source:            naive/registerFile/t (LATCH)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      naive/calculator/t_written rising
+
+  Data Path: naive/registerFile/t to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD_1:G->Q             4   0.676   0.622  naive/registerFile/t (naive/registerFile/t)
+     LUT4:I2->O           24   0.704   1.331  naive/pcAdder/nextPC<0>345_SW1 (N239)
+     LUT3:I1->O            1   0.704   0.000  naive/pcAdder/nextPC<0>345_SW3_F (N512)
+     MUXF5:I0->O           1   0.321   0.455  naive/pcAdder/nextPC<0>345_SW3 (N343)
+     LUT4:I2->O            1   0.704   0.000  naive/pcAdder/nextPC<7>_G (N1401)
+     MUXF5:I1->O          15   0.321   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     17.572ns (10.926ns logic, 6.646ns route)
+                                       (62.2% logic, 37.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'myuart/u2/clkdiv_31'
+  Total number of paths / destination ports: 19479 / 25
+-------------------------------------------------------------------------
+Offset:              22.168ns (Levels of Logic = 16)
+  Source:            myuart/u2/rbr_2 (FF)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      myuart/u2/clkdiv_31 rising
+
+  Data Path: myuart/u2/rbr_2 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.591   0.622  myuart/u2/rbr_2 (myuart/u2/rbr_2)
+     LUT4:I0->O            1   0.704   0.000  naive/MeCalResultMux/result<2>51_SW1_G (N601)
+     MUXF5:I1->O           2   0.321   0.526  naive/MeCalResultMux/result<2>51_SW1 (N288)
+     LUT3:I1->O           21   0.704   1.132  naive/MeCalResultMux/result<2>51 (MeCalResult<2>)
+     LUT4:I3->O            1   0.704   0.000  naive/ExIdByPassS/selectedValue<2>97_G (N505)
+     MUXF5:I1->O           5   0.321   0.712  naive/ExIdByPassS/selectedValue<2>97 (naive/rs<2>)
+     LUT4:I1->O            1   0.704   0.000  naive/pcAdder/jumpPC_cmp_eq000133_F (N598)
+     MUXF5:I0->O           1   0.321   0.595  naive/pcAdder/jumpPC_cmp_eq000133 (naive/pcAdder/jumpPC_cmp_eq000133)
+     LUT4:I0->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     22.168ns (13.309ns logic, 8.859ns route)
+                                       (60.0% logic, 40.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rst'
+  Total number of paths / destination ports: 19479 / 25
+-------------------------------------------------------------------------
+Offset:              22.337ns (Levels of Logic = 16)
+  Source:            serial1/data_2 (LATCH)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      rst falling
+
+  Data Path: serial1/data_2 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              3   0.676   0.706  serial1/data_2 (serial1/data_2)
+     LUT4:I0->O            1   0.704   0.000  naive/MeCalResultMux/result<2>51_SW1_F (N600)
+     MUXF5:I0->O           2   0.321   0.526  naive/MeCalResultMux/result<2>51_SW1 (N288)
+     LUT3:I1->O           21   0.704   1.132  naive/MeCalResultMux/result<2>51 (MeCalResult<2>)
+     LUT4:I3->O            1   0.704   0.000  naive/ExIdByPassS/selectedValue<2>97_G (N505)
+     MUXF5:I1->O           5   0.321   0.712  naive/ExIdByPassS/selectedValue<2>97 (naive/rs<2>)
+     LUT4:I1->O            1   0.704   0.000  naive/pcAdder/jumpPC_cmp_eq000133_F (N598)
+     MUXF5:I0->O           1   0.321   0.595  naive/pcAdder/jumpPC_cmp_eq000133 (naive/pcAdder/jumpPC_cmp_eq000133)
+     LUT4:I0->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     22.337ns (13.394ns logic, 8.943ns route)
+                                       (60.0% logic, 40.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'myuart/u3/clk'
+  Total number of paths / destination ports: 3690 / 25
+-------------------------------------------------------------------------
+Offset:              22.423ns (Levels of Logic = 14)
+  Source:            myuart/u1/tbre_t (FF)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      myuart/u3/clk rising
+
+  Data Path: myuart/u1/tbre_t to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             2   0.591   0.622  myuart/u1/tbre_t (myuart/u1/tbre_t)
+     LUT3:I0->O            2   0.704   0.622  naive/MeCalResultMux/result<0>12_SW0 (mapingB/realData<0>0)
+     LUT4:I0->O            1   0.704   0.499  naive/MeCalResultMux/result<0>12 (naive/MeCalResultMux/result<0>12)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>52 (naive/MeCalResultMux/result<0>52)
+     LUT4:I1->O           23   0.704   1.237  naive/MeCalResultMux/result<0>100 (MeCalResult<0>)
+     LUT3:I2->O            4   0.704   0.622  naive/ExIdByPassS/selectedValue<0>97 (naive/rs<0>)
+     LUT4:I2->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     22.423ns (13.050ns logic, 9.373ns route)
+                                       (58.2% logic, 41.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'wrn_2'
+  Total number of paths / destination ports: 1854 / 25
+-------------------------------------------------------------------------
+Offset:              22.368ns (Levels of Logic = 14)
+  Source:            myuart/u1/wrn0 (LATCH)
+  Destination:       vgaR<2> (PAD)
+  Source Clock:      wrn_2 rising
+
+  Data Path: myuart/u1/wrn0 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDP_1:G->Q            2   0.676   0.482  myuart/u1/wrn0 (myuart/u1/wrn0)
+     LUT3:I2->O            2   0.704   0.622  naive/MeCalResultMux/result<0>12_SW0 (mapingB/realData<0>0)
+     LUT4:I0->O            1   0.704   0.499  naive/MeCalResultMux/result<0>12 (naive/MeCalResultMux/result<0>12)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>52 (naive/MeCalResultMux/result<0>52)
+     LUT4:I1->O           23   0.704   1.237  naive/MeCalResultMux/result<0>100 (MeCalResult<0>)
+     LUT3:I2->O            4   0.704   0.622  naive/ExIdByPassS/selectedValue<0>97 (naive/rs<0>)
+     LUT4:I2->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     22.368ns (13.135ns logic, 9.233ns route)
+                                       (58.7% logic, 41.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 17894 / 61
+-------------------------------------------------------------------------
+Delay:               21.628ns (Levels of Logic = 14)
+  Source:            tsre_1 (PAD)
+  Destination:       vgaR<2> (PAD)
+
+  Data Path: tsre_1 to vgaR<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.526  tsre_1_IBUF (tsre_1_IBUF)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>12 (naive/MeCalResultMux/result<0>12)
+     LUT4:I1->O            1   0.704   0.499  naive/MeCalResultMux/result<0>52 (naive/MeCalResultMux/result<0>52)
+     LUT4:I1->O           23   0.704   1.237  naive/MeCalResultMux/result<0>100 (MeCalResult<0>)
+     LUT3:I2->O            4   0.704   0.622  naive/ExIdByPassS/selectedValue<0>97 (naive/rs<0>)
+     LUT4:I2->O           16   0.704   1.034  naive/pcAdder/jumpPC_cmp_eq000185 (naive/pcAdder/jumpPC_cmp_eq0001)
+     MUXF5:S->O           15   0.739   1.192  naive/pcAdder/nextPC<7> (leddebug_7_OBUF)
+     LUT2:I0->O            1   0.704   0.424  graphic/RendererM/b<1>23676 (graphic/RendererM/b<1>23676)
+     LUT4:I3->O            1   0.704   0.424  graphic/RendererM/b<1>23688 (graphic/RendererM/b<1>23688)
+     LUT4:I3->O            1   0.704   0.455  graphic/RendererM/b<1>23711_SW0 (N1234)
+     LUT3:I2->O            1   0.704   0.499  graphic/RendererM/b<1>23711 (graphic/RendererM/b<1>23711)
+     LUT4:I1->O            1   0.704   0.424  graphic/RendererM/b<1>24154 (graphic/RendererM/b<1>24154)
+     LUT4:I3->O            9   0.704   0.820  graphic/RendererM/b<1>24232 (vgaB_0_OBUF)
+     OBUF:I->O                 3.272          vgaR_2_OBUF (vgaR<2>)
+    ----------------------------------------
+    Total                     21.628ns (12.973ns logic, 8.655ns route)
+                                       (60.0% logic, 40.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 145.00 secs
+Total CPU time to Xst completion: 145.01 secs
+ 
+--> 
+
+Total memory usage is 603248 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings : 1173 (   0 filtered)
+Number of infos    :   62 (   0 filtered)
+
