@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=G:\GitHub\makeacomputer\motherBoard.ncd
-OUTFILE=G:\GitHub\makeacomputer\motherBoard.bit
+INFILE=G:\GitHub\mac\motherBoard.ncd
+OUTFILE=G:\GitHub\mac\motherBoard.bit
 FAMILY=Spartan3E
 PART=xc3s1200e-4fg320
-WORKINGDIR=G:\GitHub\makeacomputer
+WORKINGDIR=G:\GitHub\mac
 LICENSE=WebPack
 USER_INFO=__0_0_0

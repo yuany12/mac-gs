@@ -1,15 +1,17 @@
 module serialConn2(
   input clk, rst,              // clk & rst
-  input tbre, tsre, dataReady,    // wires linked with CPLD
+//  input tbre, tsre, dataReady,    // wires linked with CPLD
   input [1:0] mode,
   input [2:0] index,
   input [7:0] dataToSend,    // toggle switches controlling data to send to serial port
-  input [7:0] uart2serial,       // bus
-  output [7:0] serial2uart,
-  output reg rdn, wrn,
-  output ram1Oe, ram1We, ram1En,
+//  input [7:0] uart2serial,       // bus
+//  output [7:0] serial2uart,
+//  output reg rdn, wrn,
+//  output ram1Oe, ram1We, ram1En,
   output reg [7:0] data,
-  output [3:0] status
+  output [3:0] status,
+  input u_txd,
+  output u_rxd
 );
 
 localparam MODE_WRITE = 2'b01;
@@ -20,6 +22,13 @@ localparam IDLE = 2'b00,
   READ_IDLE = 2'b11;
 
 wire busWritten;
+
+//
+reg rdn, wrn;
+wire tbre, tsre, dataReady, parity_error, framing_error;
+wire ram1Oe, ram1We, ram1En;
+wire [7:0] uart2serial, serial2uart;
+//
 
 assign status = {dataReady, tbre & tsre};
 
@@ -33,6 +42,23 @@ end
 assign ram1Oe = 1;
 assign ram1We = 1;
 assign ram1En = 1;
+
+uart2 myuart
+( 
+.RST(rst),
+.CLK(clk),
+.rxd(u_txd),
+.rdn(rdn),
+.wrn(wrn),
+.data_in(serial2uart),
+.data_out(uart2serial),
+.data_ready(dataReady),
+.parity_error(parity_error),
+.framing_error(framing_error),
+.tbre(tbre),
+.tsre(tsre),
+.sdo(u_rxd)
+);
 
 always @(*) begin
   rdn = 1;

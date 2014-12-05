@@ -1,4 +1,4 @@
-vhdl work "G:\GitHub\makeacomputer\txmit.vhd"
-vhdl work "G:\GitHub\makeacomputer\rcvr.vhd"
-vhdl work "G:\GitHub\makeacomputer\clkcon.vhd"
-vhdl work "G:\GitHub\makeacomputer\uart2.vhd"
+vhdl work "G:\GitHub\mac\txmit.vhd"
+vhdl work "G:\GitHub\mac\rcvr.vhd"
+vhdl work "G:\GitHub\mac\clkcon.vhd"
+vhdl work "G:\GitHub\mac\uart2.vhd"
