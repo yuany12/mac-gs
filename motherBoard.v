@@ -122,6 +122,23 @@ serialConn2 serial2(
   serialPortState_2
 );
 
+uart2 myuart
+( 
+.RST(rst),
+.CLK(clk11M),
+.rxd(u_txd),
+.rdn(rdn_2),
+.wrn(wrn_2),
+.data_in(serial2uart),
+.data_out(uart2serial),
+.data_ready(dataReady_2),
+.parity_error(parity_error_2),
+.framing_error(framing_error_2),
+.tbre(tbre),
+.tsre(tsre),
+.sdo(u_rxd)
+);
+
 
 // to be deleted if not used
 
